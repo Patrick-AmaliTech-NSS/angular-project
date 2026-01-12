@@ -1,0 +1,13 @@
+<section>
+  <h2>My Products</h2>
+  <app-product-item (addToCart)="handleAddToCart($event)" [productName]="'Product 1'" [price]="10"></app-product-item>
+  <app-product-item (addToCart)="handleAddToCart($event)" [productName]="'Product 2'" [price]="20"></app-product-item>
+
+  <ul>
+    @for(cart of carts; track $index) {
+      <li>{{ cart }}</li>
+    } @empty  {
+      <p>No items in cart</p>
+    }
+  </ul>
+</section>
