@@ -18,7 +18,7 @@ export class ProductList {
 
    getProducts() {
     let data = this.productService.getProducts()
-    console.log("products:", data)
+    // console.log("products:", data)
     this.products.push(...data)
   }
   
