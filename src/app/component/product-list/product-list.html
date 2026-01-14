@@ -1,13 +1,29 @@
 <section>
   <h2>My Products</h2>
-  <app-product-item (addToCart)="handleAddToCart($event)" [productName]="'Product 1'" [price]="10"></app-product-item>
-  <app-product-item (addToCart)="handleAddToCart($event)" [productName]="'Product 2'" [price]="20"></app-product-item>
-
+  <!-- <app-product-item (addToCart)="handleAddToCart($event)"></app-product-item> -->
+  <app-product-item (loadProduct)="getProducts()" [products]="products"></app-product-item>
+  
   <ul>
     @for(cart of carts; track $index) {
-      <li>{{ cart }}</li>
+      <li>Cart Item: {{ cart.label }}</li>
+      <li>Cart Item Price: {{ cart.price }}</li>
+      <br>
     } @empty  {
       <p>No items in cart</p>
+    }
+  </ul>
+  
+  <ul>
+    @for(product of products; track product.id) {
+      <h2>Product Name: {{ product.label }} </h2>
+      <p> Price: {{ product.price }} </p>
+      <div>
+        <img [src]="product.imageUrl" [alt]="product.label" width="200" height="200"/>
+        <br>
+        <button (click)="handleAddToCart(product.id)">Add To Cart</button>
+      </div>
+    } @empty  {
+      <p>No products available</p>
     }
   </ul>
 </section>

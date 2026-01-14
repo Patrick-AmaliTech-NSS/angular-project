@@ -1,13 +1,20 @@
 import { Injectable } from "@angular/core";
+import { IProduct, ProductId } from "../model";
+import { ProductsData } from "../model/data";
+
 
 @Injectable({
     providedIn: 'root' // scope
 })
-export class LoggerService {
-    logstore: string[] = [];
+export class ProductService {
+    data: IProduct[] = ProductsData
 
-    log(message: string) {
-        this.logstore.push(message);
-        console.log(message);
+    getProducts() {
+        return this.data;
     }
+
+    getProductById(id: ProductId): IProduct | undefined {
+        return this.data.find(product => product.id === id);
+    }
+
 }

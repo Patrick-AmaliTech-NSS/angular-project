@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "label": "Product 1",
+        "price": 42,
+        "imageUrl": "/favicon.ico"
+    },
+    {
+        "id": 2,
+        "label": "Product 2",
+        "price": 84,
+        "imageUrl": "/favicon.ico"
+    },
+    {
+        "id": 3,
+        "label": "Product 3",
+        "price": 126,
+        "imageUrl": "/favicon.ico"
+    },
+    {
+        "id": 4,
+        "label": "Product 4",
+        "price": 168,
+        "imageUrl": "/favicon.ico"
+    },
+    {
+        "id": 5,
+        "label": "Product 5",
+        "price": 210,
+        "imageUrl": "/favicon.ico"
+    },
+    {
+        "id": 6,
+        "label": "Product 6",
+        "price": 252,
+        "imageUrl": "/favicon.ico"
+    },
+    {
+        "id": 7,
+        "label": "Product 7",
+        "price": 294,
+        "imageUrl": "/favicon.ico"
+    },
+    {
+        "id": 8,
+        "label": "Product 8",
+        "price": 336,
+        "imageUrl": "/favicon.ico"
+    }
+]

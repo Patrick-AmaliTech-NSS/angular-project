@@ -8,17 +8,22 @@ import { IProduct } from '../../model'
   styleUrl: './product-item.css'
 })
 export class ProductItem {
-  @Input() productName: string = ''
-  @Input() price: number = 0
-  @Input() product: IProduct[] = []
+  @Input() products: IProduct[] = []
 
   @Output() addToCart = new EventEmitter<IProduct[]>()
+  @Output() loadProduct = new EventEmitter<IProduct[]>()
 
   onAddToCart () {
     // emit the product name to the parent
-    this.addToCart.emit(this.product)
+    this.addToCart.emit(this.products)
+  }
+
+  onProductsLoad() {
+    this.loadProduct.emit(this.products)
   }
 }
+
+
 // Questions:
 // proper types
 // create a json file with products 

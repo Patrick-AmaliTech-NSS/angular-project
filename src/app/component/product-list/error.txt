@@ -1,18 +1,10 @@
-
-  products : ProductI[]=[
-id: 1;
-name:"Pict";
-price:400
-pImg: "https://images.unsplash.com/photo-1761839258044-e59f324b5a7f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3"
-  ]
-
-
-
-<ul>
-    <li ngFor="let product of ProductI">
-<p>id : {{product.id}}</p>
-<p>name : {{product.name}}</p>
-<p>price : {{product.price}}</p>
-<img [img]="prod" />
-    </li>
-</ul>
+product-list.ts:54 NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were: 
+key "1" at index "0" and "8", 
+key "2" at index "1" and "9", 
+key "3" at index "2" and "10", 
+key "4" at index "3" and "11", 
+key "5" at index "4" and "12", 
+key "6" at index "5" and "13", 
+key "7" at index "6" and "14", 
+key "8" at index "7" and "15". Find more at https://v21.angular.dev/errors/NG0955
+ProductList_Template	@	product-list.ts:54
