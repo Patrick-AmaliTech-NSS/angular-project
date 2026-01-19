@@ -10,10 +10,12 @@ export const routes: Routes = [
   //   pathMatch: 'full',
   // },
   {
+    data: { title: 'Products' },
     path: 'products',
     component: ProductList,
   },
   {
+    data: { title: 'Shopping Cart' },
     path: 'cart',
     component: Cart,
   },
