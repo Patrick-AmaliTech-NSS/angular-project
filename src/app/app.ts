@@ -11,11 +11,7 @@ export class App {
   protected readonly title = signal('my-angular-app');
   router = inject(Router);
 
-  handleCartNavigation() {
-    this.router.navigateByUrl('cart');
-  }
-
-  handleProductListNavigation() {
-    this.router.navigateByUrl('products');
+  handleNavigation(url: string) {
+    this.router.navigateByUrl(url);
   }
 }
