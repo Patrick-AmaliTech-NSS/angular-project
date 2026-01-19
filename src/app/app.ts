@@ -18,15 +18,19 @@ export class App {
   }
 
   ngOnInit() {
-    this.router.events.pipe(filter((event) => event instanceof NavigationEnd),
-      map(() => {
-        let route = this.route.snapshot;
-        while (route.firstChild) {
-          route = route.firstChild;
-        }
-        return route.data;
-      })).subscribe((data) => {
-          console.log("title:", data['title']);
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        map(() => {
+          let route = this.route.snapshot;
+          while (route.firstChild) {
+            route = route.firstChild;
+          }
+          return route.data;
+        }),
+      )
+      .subscribe((data) => {
+        console.log('title:', data['title']);
       });
   }
 }
