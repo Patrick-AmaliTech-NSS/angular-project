@@ -1,20 +1,30 @@
-import { Injectable } from "@angular/core";
-import { IProduct, ProductId } from "../model";
-import { ProductsData } from "../model/data";
-
+import { Injectable } from '@angular/core';
+import { ProductsData } from '../model/data';
+import { IProduct, ProductId } from '../model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root' // scope
+  providedIn: 'root',
 })
 export class ProductService {
-    data: IProduct[] = ProductsData
+  private data: IProduct[] = ProductsData;
 
-    getProducts() {
-        return this.data;
-    }
+  private cartData = new BehaviorSubject<IProduct[]>([]);
+  cart$ = this.cartData.asObservable();
 
-    getProductById(id: ProductId): IProduct | undefined {
-        return this.data.find(product => product.id === id);
-    }
+  addProductToCart(product: IProduct) {
+    this.cartData.next([...this.cartData.value, product]);
+  }
 
+  getCartProducts(): IProduct[] {
+    return this.cartData.value;
+  }
+
+  getProducts() {
+    return this.data;
+  }
+
+  getProductById(id: ProductId): IProduct | undefined {
+    return this.data.find((product) => product.id === id);
+  }
 }

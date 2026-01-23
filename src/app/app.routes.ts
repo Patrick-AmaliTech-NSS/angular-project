@@ -4,11 +4,11 @@ import { ProductList } from './component/product-list/product-list';
 import { NotFound } from './component/not-found/not-found';
 
 export const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'products',
-  //   pathMatch: 'full',
-  // },
+  {
+    path: '',
+    redirectTo: 'products',
+    pathMatch: 'full',
+  },
   {
     data: { title: 'Products' },
     path: 'products',

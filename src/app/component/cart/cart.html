@@ -1,1 +1,9 @@
-<p>this is the cart.</p>
+<ul>
+  @for(item of (cart$ | async) ?? []; track $index) {
+  <li>Cart Item: {{ item.label }}</li>
+  <li>Cart Item Price: {{ item.price }}</li>
+  <br>
+  } @empty {
+  <p>No items in cart</p>
+  }
+</ul>
